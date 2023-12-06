@@ -1,0 +1,30 @@
+/* File: font.css */
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: local('RobotoCondensed'),
+         url('./fonts/RobotoCondensed-Regular.ttf') format('ttf'),
+}
+@font-face {
+    font-family: 'RobotoCondensedBold';
+    src: local('RobotoCondensedBold'),
+         url('./fonts/RobotoCondensed-Bold.ttf') format('ttf'),
+}
+
+@font-face {
+    font-family: 'RobotoCondensedItalic';
+    src: local('RobotoCondensedItalic'),
+         url('./fonts/RobotoCondensed-Italic.ttf') format('ttf'),
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: local('SoraRegular'),
+         url('./fonts/Sora-Regular.ttf') format('ttf'),
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: local('SoraBold'),
+         url('./fonts/Sora-Bold.ttf') format('ttf'),
+}
