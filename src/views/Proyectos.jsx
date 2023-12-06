@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import esquema1 from "./../assets/graphics/esquema1.svg";
+import greenBg from "./../assets/graphics/green-bg.png";
 
 const StyledProyectos = styled.div`
   display: flex;
@@ -7,16 +7,12 @@ const StyledProyectos = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #82c7c0;
-`;
+  background-image: url(${greenBg});
+  background: linear-gradient(180deg, #219c90 52.08%, #219c90 100%);
+¡`;
 
 const Proyectos = () => {
-  return (
-    <StyledProyectos id="proyectos">
-      tema 1
-      <img src={esquema1} alt="esquema 1" />
-    </StyledProyectos>
-  );
+  return <StyledProyectos id="proyectos">aaa</StyledProyectos>;
 };
 
 export default Proyectos;
