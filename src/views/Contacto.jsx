@@ -5,7 +5,7 @@ const StyledContacto = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: #c6c782;
 `;

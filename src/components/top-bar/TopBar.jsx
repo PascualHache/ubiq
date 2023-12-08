@@ -38,7 +38,7 @@ const TopBar = () => {
     <StyledTopBar>
       <div className="nav-bar">
         <div className="logo">
-          <img src={ubiqLogo} alt="ubiq logo" />
+          <img src={ubiqLogo} alt="ubiq logo" draggable="false" />
         </div>
         <ul>
           <a href="#proyectos">proyectos</a>

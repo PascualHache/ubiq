@@ -18,6 +18,18 @@
 }
 
 @font-face {
+    font-family: 'RobotoCondensedBlackItalic';
+    src: local('RobotoCondensedBlackItalic'),
+         url('./fonts/RobotoCondensed-BlackItalic.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'RobotoLightItalic';
+    src: local('RobotoLightItalic'),
+         url('./fonts/RobotoCondensed-LightItalic.ttf') format('truetype'),
+}
+
+@font-face {
     font-family: 'Sora';
     src: local('SoraRegular'),
          url('./fonts/Sora-Regular.ttf') format('truetype'),

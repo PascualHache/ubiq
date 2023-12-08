@@ -1,0 +1,32 @@
+{
+  "1": {
+    "name": "mixwell",
+    "image": "mixwell.png",
+    "index": 0
+  },
+  "2": {
+    "name": "thegrefg",
+    "image": "thegrefg.png",
+    "index": 1
+  },
+  "3": {
+    "name": "gemita",
+    "image": "gemita.png",
+    "index": 2
+  },
+  "4": {
+    "name": "llunaclark",
+    "image": "llunaclark.png",
+    "index": 3
+  },
+  "5": {
+    "name": "rogercarbo",
+    "image": "rogercarbo.png",
+    "index": 4
+  },
+  "6": {
+    "name": "gonsabella",
+    "image": "gonsabella.png",
+    "index": 5
+  }
+}
