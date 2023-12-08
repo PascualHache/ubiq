@@ -1,5 +1,4 @@
 import TopBar from "./components/top-bar/TopBar";
-import Contactos from "./views/Contacto";
 import Main from "./views/Main";
 import Proyectos from "./views/Proyectos";
 import Talentos from "./views/Talentos";
@@ -19,7 +18,6 @@ function App() {
       <Main />
       <Talentos />
       <Proyectos />
-      <Contactos />
     </StyledApp>
   );
 }
