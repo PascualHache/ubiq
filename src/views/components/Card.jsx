@@ -70,11 +70,11 @@ const StyledCard = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ image, title, name, description, date }) => {
+const Card = ({ image, title, name, description, date, id = "" }) => {
   // eslint-disable-next-line react/prop-types
   const arrDate = date.split(" ");
   return (
-    <StyledCard>
+    <StyledCard id={id}>
       <img src={image} alt="Card Image" className="card-image" />
       <div className="card-block">
         <div className="card-row">

@@ -23,10 +23,32 @@ const StyledProyectos = styled.div`
   .proyectos {
     display: flex;
     flex-direction: row;
-    gap: 3%;
+    gap: 5%;
     padding: 5%;
+    @media (max-width: 660px) {
+      flex-direction: column;
+      gap: 7%;
+      padding: 10%;
+    }
     .card-project {
       width: 33%;
+    }
+    #card-project-0 {
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(5deg);
+    }
+    #card-project-1 {
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(-5deg);
+    }
+    #card-project-2 {
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(-5deg);
+    }
+    #card-project-0:hover,
+    #card-project-1:hover,
+    #card-project-2:hover {
+      transform: rotate(0deg);
     }
   }
   .separador {
@@ -126,7 +148,7 @@ const StyledProyectosPicture = styled.div`
 
 const Proyectos = () => {
   return (
-    <StyledProyectos id="proyectos">
+    <StyledProyectos>
       <div className="overframe">
         <div className="proyectos">
           {Object.keys(proyectos).map((talent, index) => {
@@ -139,11 +161,12 @@ const Proyectos = () => {
                 name={proyectos[talent].name}
                 key={index}
                 className="card-project"
+                id={"card-project-" + index}
               />
             );
           })}
         </div>
-        <StyledProyectosPicture>
+        <StyledProyectosPicture id="contacto">
           <img
             src={whiteArrow}
             className="whiteArrow"

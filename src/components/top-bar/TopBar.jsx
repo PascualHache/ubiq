@@ -1,5 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 import ubiqLogo from "./../../assets/logos/ubiq-logo.png";
+import menuIcon from "./../../assets/graphics/menu-icon.svg";
+import { getWindowDimension } from "../../utils/utils";
+import { useOutsideClick } from "../../hooks/use-click-outside";
 
 const StyledTopBar = styled.nav`
   height: 126px;
@@ -9,10 +13,17 @@ const StyledTopBar = styled.nav`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 82px;
+    padding: 0 4% 0 6%;
     img {
+      margin: 30px 0;
+    }
+    .ubiqLogo {
       height: 83px;
-      margin: 22px;
+    }
+    .menuIcon {
+      height: 45px;
+      padding: 0 12px;
+      cursor: pointer;
     }
     ul {
       list-style: none;
@@ -33,18 +44,79 @@ const StyledTopBar = styled.nav`
   }
 `;
 
+const StyledMenu = styled.div`
+  display: ${({ open }) => (open ? "flex" : "none")};
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #ededed;
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+  height: auto;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+
+  a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: #0d0c1d;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: #343078;
+    }
+  }
+`;
+
 const TopBar = () => {
+  const { width } = getWindowDimension();
+  const [open, setOpen] = useState(false);
+  const handleClickOutside = () => {
+    open && setOpen(false);
+  };
+  const ref = useOutsideClick(handleClickOutside);
+
   return (
     <StyledTopBar>
       <div className="nav-bar">
         <div className="logo">
-          <img src={ubiqLogo} alt="ubiq logo" draggable="false" />
+          <img
+            src={ubiqLogo}
+            className="ubiqLogo"
+            alt="ubiq logo"
+            draggable="false"
+          />
         </div>
-        <ul>
-          <a href="#proyectos">proyectos</a>
-          <a href="#talento">talento</a>
-          <a href="#contacto">contacto</a>
-        </ul>
+        {width >= 1100 ? (
+          <ul>
+            <a href="#proyectos">proyectos</a>
+            <a href="#talento">talento</a>
+            <a href="#contacto">contacto</a>
+          </ul>
+        ) : (
+          <div ref={ref}>
+            <img
+              src={menuIcon}
+              className="menuIcon"
+              alt="menuIcon"
+              draggable="false"
+              onClick={() => setOpen(!open)}
+            />
+            <StyledMenu open={open}>
+              <a href="#proyectos">proyectos</a>
+              <a href="#talento">talento</a>
+              <a href="#contacto">contacto</a>
+            </StyledMenu>
+          </div>
+        )}
       </div>
     </StyledTopBar>
   );

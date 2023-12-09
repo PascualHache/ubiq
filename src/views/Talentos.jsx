@@ -2,6 +2,7 @@ import styled from "styled-components";
 import talents from "../statics/talentos.json";
 import proyectos from "./../assets/graphics/proyectos.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
+import { getWindowDimension } from "../utils/utils";
 
 const StyledTalentos = styled.div`
   display: flex;
@@ -14,10 +15,12 @@ const StyledTalentos = styled.div`
     display: flex;
     flex-direction: row;
     gap: 16px;
+    z-index: 10;
   }
   img {
     width: 100%;
   }
+
   .sub-talento {
     color: #219c90;
     font-family: RobotoCondensed;
@@ -60,27 +63,47 @@ const StyledProjectPicture = styled.div`
     top: 50%;
     width: 38%;
   }
+  .discontinous-box {
+    width: 94%;
+    height: 105%;
+    border-radius: 34px;
+    border: 1px dashed #219c90;
+    position: absolute;
+    top: -103%;
+    z-index: 1;
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
 `;
 
 const Talentos = () => {
+  const { width } = getWindowDimension();
   return (
-    <StyledTalentos id="Talentos">
-      <div className="talentos">
-        {Object.keys(talents).map((talent, index) => {
-          return (
-            <div key={index}>
-              <img
-                src={`../../public/talents/${talents[talent].image}`}
-                alt={talents[talent].name}
-              />
-            </div>
-          );
-        })}
-      </div>
-      <div className="sub-talento">
-        especializados en ubicarte donde quieras estar
-      </div>
+    <StyledTalentos>
+      {width > 660 ? (
+        <>
+          <div className="talentos">
+            {Object.keys(talents).map((talent, index) => {
+              return (
+                <div key={index}>
+                  <img
+                    src={`../../public/talents/${talents[talent].image}`}
+                    alt={talents[talent].name}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="sub-talento">
+            especializados en ubicarte donde quieras estar
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       <StyledProjectPicture>
+        <div className="discontinous-box" />
         <img
           src={leftArrow}
           className="leftArrow"
@@ -92,6 +115,7 @@ const Talentos = () => {
           className="proyectos"
           alt="proyectos"
           draggable="false"
+          id="proyectos"
         />
       </StyledProjectPicture>
     </StyledTalentos>
