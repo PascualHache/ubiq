@@ -45,7 +45,7 @@ const StyledTopBar = styled.nav`
 `;
 
 const StyledMenu = styled.div`
-  display: ${({ open }) => (open ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background: #ededed;
@@ -80,7 +80,7 @@ const TopBar = () => {
   const { width } = getWindowDimension();
   const [open, setOpen] = useState(false);
   const handleClickOutside = () => {
-    open && setOpen(false);
+    setOpen(false);
   };
   const ref = useOutsideClick(handleClickOutside);
 
@@ -108,13 +108,15 @@ const TopBar = () => {
               className="menuIcon"
               alt="menuIcon"
               draggable="false"
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen(() => !open)}
             />
-            <StyledMenu open={open}>
-              <a href="#proyectos">proyectos</a>
-              <a href="#talento">talento</a>
-              <a href="#contacto">contacto</a>
-            </StyledMenu>
+            {open && (
+              <StyledMenu open={open}>
+                <a href="#proyectos">proyectos</a>
+                <a href="#talento">talento</a>
+                <a href="#contacto">contacto</a>
+              </StyledMenu>
+            )}
           </div>
         )}
       </div>
