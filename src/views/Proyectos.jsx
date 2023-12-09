@@ -7,18 +7,17 @@ import hanged from "./../assets/graphics/hanged.svg";
 import cuentanos from "./../assets/graphics/cuentanos.svg";
 import dondeUbicamos from "./../assets/graphics/donde-ubicamos.svg";
 import separador from "./../assets/graphics/separador.svg";
+import miniLogo from "./../assets/graphics/mini-logo.svg";
 
 const StyledProyectos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 130vw;
   background-image: url(${greenBg});
   .overframe {
     background-color: #219c90;
     width: 100%;
-    height: 130vw;
     opacity: 0.7;
   }
   .proyectos {
@@ -33,7 +32,7 @@ const StyledProyectos = styled.div`
   .separador {
     position: absolute;
     top: 85%;
-    left: 33%;
+    left: 32%;
     width: 16%;
     height: auto;
   }
@@ -42,17 +41,35 @@ const StyledProyectos = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 10% 0;
+    margin: 0 4%;
     .solid {
       border-top: 3px solid #fff;
       width: 100%;
     }
-    margin: 5% 20%;
     .footer-text {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
+      width: 76%;
       flex-direction: row;
+      margin-top: 20px;
+      text-transform: uppercase;
+      a {
+        text-decoration: none !important;
+        text-decoration: none;
+        color: #fff;
+      }
+      .footer-text-rights {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-transform: none;
+        img {
+          width: 8%;
+          margin-right: 12px;
+        }
+      }
     }
   }
 `;
@@ -162,8 +179,19 @@ const Proyectos = () => {
           <hr className="solid" />
           <div className="footer-text">
             <span>Andorra LA VELLA</span>
-            <span>UBIQ S.L. todos los derechos reservados</span>
-            <span>CONTACTO</span>
+            <span className="footer-text-rights">
+              {" "}
+              <img
+                src={miniLogo}
+                className="miniLogo"
+                alt="miniLogo"
+                draggable="false"
+              />
+              UBIQ S.L. todos los derechos reservados
+            </span>
+            <span>
+              <a href="mailto: abc@example.com">CONTACTO</a>
+            </span>
             <span>COOKIES</span>
           </div>
         </div>
