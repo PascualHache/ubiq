@@ -8,6 +8,9 @@ import cuentanos from "./../assets/graphics/cuentanos.svg";
 import dondeUbicamos from "./../assets/graphics/donde-ubicamos.svg";
 import separador from "./../assets/graphics/separador.svg";
 import miniLogo from "./../assets/graphics/mini-logo.svg";
+import esland from "../../public/projects/esland.png";
+import minititans from "../../public/projects/minititans.png";
+import pingpong from "../../public/projects/pingpong.png";
 
 const StyledProyectos = styled.div`
   display: flex;
@@ -146,6 +149,12 @@ const StyledProyectosPicture = styled.div`
   }
 `;
 
+const imageMapper = {
+  esland: esland,
+  minititans: minititans,
+  pingpong: pingpong,
+};
+
 const Proyectos = () => {
   return (
     <StyledProyectos>
@@ -154,7 +163,7 @@ const Proyectos = () => {
           {Object.keys(proyectos).map((talent, index) => {
             return (
               <Card
-                image={`../../public/projects/${proyectos[talent].image}`}
+                image={imageMapper[proyectos[talent].image]}
                 title={proyectos[talent].title}
                 description={proyectos[talent].description}
                 date={proyectos[talent].date}

@@ -3,6 +3,12 @@ import talents from "../statics/talentos.json";
 import proyectos from "./../assets/graphics/proyectos.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import { getWindowDimension } from "../utils/utils";
+import gemita from "../../public/talents/gemita.png";
+import thegrefg from "../../public/talents/thegrefg.png";
+import gonsabella from "../../public/talents/gonsabella.png";
+import llunaclark from "../../public/talents/llunaclark.png";
+import mixwell from "../../public/talents/mixwell.png";
+import rogercarbo from "../../public/talents/rogercarbo.png";
 
 const StyledTalentos = styled.div`
   display: flex;
@@ -77,6 +83,15 @@ const StyledProjectPicture = styled.div`
   }
 `;
 
+const imageMapper = {
+  gemita: gemita,
+  gonsabella: gonsabella,
+  llunaclark: llunaclark,
+  mixwell: mixwell,
+  rogercarbo: rogercarbo,
+  thegrefg: thegrefg,
+};
+
 const Talentos = () => {
   const { width } = getWindowDimension();
   return (
@@ -88,7 +103,7 @@ const Talentos = () => {
               return (
                 <div key={index}>
                   <img
-                    src={`../../public/talents/${talents[talent].image}`}
+                    src={imageMapper[talents[talent].image]}
                     alt={talents[talent].name}
                   />
                 </div>

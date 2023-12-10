@@ -1,32 +1,32 @@
 {
   "1": {
     "name": "mixwell",
-    "image": "mixwell.png",
+    "image": "mixwell",
     "index": 0
   },
   "2": {
     "name": "thegrefg",
-    "image": "thegrefg.png",
+    "image": "thegrefg",
     "index": 1
   },
   "3": {
     "name": "gemita",
-    "image": "gemita.png",
+    "image": "gemita",
     "index": 2
   },
   "4": {
     "name": "llunaclark",
-    "image": "llunaclark.png",
+    "image": "llunaclark",
     "index": 3
   },
   "5": {
     "name": "rogercarbo",
-    "image": "rogercarbo.png",
+    "image": "rogercarbo",
     "index": 4
   },
   "6": {
     "name": "gonsabella",
-    "image": "gonsabella.png",
+    "image": "gonsabella",
     "index": 5
   }
 }
