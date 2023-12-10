@@ -10,36 +10,63 @@ const StyledCard = styled.div`
     width: 100%;
   }
   .card-block {
-    margin: 6%;
+    margin: 8% 6% 6% 6%;
   }
   .card-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-family: RobotoCondensed;
+    font-family: RobotoCondensedBold;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
-    line-height: 91.618%;
+    line-height: 1;
     text-transform: uppercase;
     margin-top: 4%;
-    .title {
-      width: 60%;
+    @media (max-width: 1300px) {
+      font-size: 26px;
+    }
+    @media (max-width: 1130px) {
+      font-size: 22px;
+    }
+    @media (max-width: 960px) {
+      font-size: 20px;
+    }
+    @media (max-width: 870px) {
+      font-size: 18px;
+    }
+    @media (max-width: 786px) {
+      font-size: 15px;
+    }
+    @media (max-width: 660px) {
+      font-size: 30px;
+    }
+    .card-title-block {
+      .title {
+        width: 70%;
+      }
+      .card-subtitle {
+        color: #9d9d9d;
+        font-family: RobotoCondensedBold;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px; /* 108.944% */
+        text-transform: uppercase;
+        margin-top: 4px;
+        @media (max-width: 870px) {
+          font-size: 14px;
+        }
+        @media (max-width: 660px) {
+          font-size: 18px;
+        }
+      }
     }
     .card-logo {
       width: 14%;
       height: auto;
     }
-  }
-  .card-subtitle {
-    color: #9d9d9d;
-    font-family: RobotoCondensed;
-    font-size: 18.886px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20.575px; /* 108.944% */
-    text-transform: uppercase;
   }
   .card-row2 {
     display: flex;
@@ -53,13 +80,22 @@ const StyledCard = styled.div`
     font-weight: 500;
     line-height: normal;
     width: 82%;
+    @media (max-width: 1300px) {
+      font-size: 14px;
+    }
+    @media (max-width: 870px) {
+      font-size: 12px;
+    }
+    @media (max-width: 660px) {
+      font-size: 16px;
+    }
   }
   .card-date {
     position: absolute;
-    bottom: 16%;
+    bottom: 14%;
     right: 1%;
     color: #9d9d9d;
-    font-family: RobotoCondensed;
+    font-family: RobotoCondensedBold;
     font-size: 20.891px;
     font-style: normal;
     font-weight: 700;
@@ -79,12 +115,15 @@ const Card = ({ image, title, name, description, date, id = "" }) => {
       <div className="card-block">
         <div className="card-row">
           <div className="card-title">
-            <div className="title">{title}</div>
+            <div className="card-title-block">
+              <div className="title">{title}</div>
+              <div className="card-subtitle">{`by ${name}`}</div>
+            </div>
             <img src={logoEsland} alt="Logo" className="card-logo" />
           </div>
-          <div className="card-subtitle">
+          {/* <div className="card-subtitle">
             <div className="subtitle">{`by ${name}`}</div>
-          </div>
+          </div> */}
         </div>
         <div className="card-row2">
           <p className="card-description">{description}</p>

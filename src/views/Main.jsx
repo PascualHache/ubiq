@@ -4,6 +4,7 @@ import ubicateHeavy from "./../assets/graphics/ubicate-heavy.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import rightArrow from "./../assets/graphics/right-arrow.svg";
 import talentos from "./../assets/graphics/talentos.svg";
+import miniTalentos from "./../assets/graphics/mini-talentos.svg";
 import { getWindowDimension } from "../utils/utils";
 
 const StyledMain = styled.div`
@@ -30,6 +31,9 @@ const StyledMain = styled.div`
     top: 2%;
     z-index: 1;
     transform: rotate(2deg);
+    @media (max-width: 660px) {
+      height: 24%;
+    }
   }
 
   .discontinous-box2 {
@@ -176,6 +180,9 @@ const StyledMain = styled.div`
       font-family: RobotoCondensedBlackItalic;
       color: #000;
     }
+    .underline {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -223,18 +230,29 @@ const Main = () => {
         <div className="aim-box">
           ACERCAMOS
           <br />
-          <span className="bold">MARCAS</span> A <span>TALENTOS</span>,<br />
+          <span className="bold underline">MARCAS</span> A <span>TALENTOS</span>
+          ,<br />
           <span>TALENTOS</span> A <span className="bold">AUDIENCIAS</span>
           <br />Y <span className="bold">AUDIENCIAS</span> A{" "}
-          <span className="bold">MARCAS.</span>
+          <span className="bold underline">MARCAS.</span>
         </div>
-        <img
-          src={talentos}
-          className="talentos"
-          alt="talentos"
-          draggable="false"
-          id="talento"
-        />
+        {width > 660 ? (
+          <img
+            src={talentos}
+            className="talentos"
+            alt="talentos"
+            draggable="false"
+            id="talento"
+          />
+        ) : (
+          <img
+            src={miniTalentos}
+            className="talentos"
+            alt="talentos"
+            draggable="false"
+            id="talento"
+          />
+        )}
       </div>
     </StyledMain>
   );

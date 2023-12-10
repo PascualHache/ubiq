@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import talents from "../statics/talentos.json";
 import proyectos from "./../assets/graphics/proyectos.svg";
+import MiniProyectos from "./../assets/graphics/mini-proyectos.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import { getWindowDimension } from "../utils/utils";
 import gemita from "../../public/talents/gemita.png";
@@ -9,6 +10,12 @@ import gonsabella from "../../public/talents/gonsabella.png";
 import llunaclark from "../../public/talents/llunaclark.png";
 import mixwell from "../../public/talents/mixwell.png";
 import rogercarbo from "../../public/talents/rogercarbo.png";
+import Minigemita from "../../public/mini-talents/mini-gemita.png";
+import Minithegrefg from "../../public/mini-talents/mini-thegrefg.png";
+import Minigonsabella from "../../public/mini-talents/mini-rogercarbo.png";
+import Minillunaclark from "../../public/mini-talents/mini-llunaclark.png";
+import Minimixwell from "../../public/mini-talents/mini-mixwell.png";
+import Minirogercarbo from "../../public/mini-talents/mini-rogercarbo.png";
 
 const StyledTalentos = styled.div`
   display: flex;
@@ -43,6 +50,20 @@ const StyledTalentos = styled.div`
     }
     @media (max-width: 960px) {
       font-size: 20px;
+    }
+  }
+  .mini-talentos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    z-index: 10;
+    img {
+      width: 100%;
+      min-width: 170px;
+      box-shadow: 0px 0px 12.51px 0px #2c665f;
     }
   }
 `;
@@ -92,6 +113,15 @@ const imageMapper = {
   thegrefg: thegrefg,
 };
 
+const imageMiniMapper = {
+  gemita: Minigemita,
+  gonsabella: Minigonsabella,
+  llunaclark: Minillunaclark,
+  mixwell: Minimixwell,
+  rogercarbo: Minirogercarbo,
+  thegrefg: Minithegrefg,
+};
+
 const Talentos = () => {
   const { width } = getWindowDimension();
   return (
@@ -115,7 +145,18 @@ const Talentos = () => {
           </div>
         </>
       ) : (
-        <></>
+        <div className="mini-talentos">
+          {Object.keys(talents).map((talent, index) => {
+            return (
+              <div key={index}>
+                <img
+                  src={imageMiniMapper[talents[talent].image]}
+                  alt={talents[talent].name}
+                />
+              </div>
+            );
+          })}
+        </div>
       )}
       <StyledProjectPicture>
         <div className="discontinous-box" />
@@ -125,13 +166,23 @@ const Talentos = () => {
           alt="leftArrow"
           draggable="false"
         />
-        <img
-          src={proyectos}
-          className="proyectos"
-          alt="proyectos"
-          draggable="false"
-          id="proyectos"
-        />
+        {width > 660 ? (
+          <img
+            src={proyectos}
+            className="proyectos"
+            alt="proyectos"
+            draggable="false"
+            id="proyectos"
+          />
+        ) : (
+          <img
+            src={MiniProyectos}
+            className="proyectos"
+            alt="proyectos"
+            draggable="false"
+            id="proyectos"
+          />
+        )}
       </StyledProjectPicture>
     </StyledTalentos>
   );

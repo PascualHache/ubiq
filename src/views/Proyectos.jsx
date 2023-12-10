@@ -2,8 +2,10 @@ import styled from "styled-components";
 import greenBg from "./../assets/graphics/green-bg.png";
 import proyectos from "../statics/proyectos.json";
 import Card from "./components/Card";
-import whiteArrow from "./../assets/graphics/white-arrow.svg";
+import whiteArrowRight from "./../assets/graphics/white-arrow-right.svg";
+import whiteArrowLeft from "./../assets/graphics/white-arrow-left.svg";
 import hanged from "./../assets/graphics/hanged.svg";
+import miniHanged from "./../assets/graphics/mini-hanged.svg";
 import cuentanos from "./../assets/graphics/cuentanos.svg";
 import dondeUbicamos from "./../assets/graphics/donde-ubicamos.svg";
 import separador from "./../assets/graphics/separador.svg";
@@ -11,6 +13,7 @@ import miniLogo from "./../assets/graphics/mini-logo.svg";
 import esland from "../../public/projects/esland.png";
 import minititans from "../../public/projects/minititans.png";
 import pingpong from "../../public/projects/pingpong.png";
+import { getWindowDimension } from "../utils/utils";
 
 const StyledProyectos = styled.div`
   display: flex;
@@ -32,6 +35,11 @@ const StyledProyectos = styled.div`
       flex-direction: column;
       gap: 7%;
       padding: 10%;
+      #card-project-0,
+      #card-project-1,
+      #card-project-3 {
+        margin-bottom: 44px;
+      }
     }
     .card-project {
       width: 33%;
@@ -76,25 +84,46 @@ const StyledProyectos = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 76%;
+      width: 80%;
       flex-direction: row;
       margin-top: 20px;
       text-transform: uppercase;
+      font-size: 20px;
+      @media (max-width: 1005px) {
+        font-size: 16px;
+      }
+      @media (max-width: 790px) {
+        font-size: 12px;
+      }
+      /* @media (max-width: 660px) {
+        font-size: 14px;
+      } */
       a {
         text-decoration: none !important;
         text-decoration: none;
         color: #fff;
+        margin-right: 6px;
       }
       .footer-text-rights {
         display: flex;
         flex-direction: row;
         align-items: center;
         text-transform: none;
+        white-space: nowrap;
+        overflow: hidden;
+        @media (max-width: 660px) {
+          white-space: wrap;
+        }
         img {
           width: 8%;
           margin-right: 12px;
         }
       }
+    }
+  }
+  #contacto {
+    @media (max-width: 660px) {
+      height: 86vw;
     }
   }
 `;
@@ -104,7 +133,7 @@ const StyledProyectosPicture = styled.div`
   width: 100vw;
   max-width: 100%;
   height: 58vw;
-  .whiteArrow {
+  .whiteArrowRight {
     position: absolute;
     top: -6%;
     right: 32%;
@@ -117,6 +146,9 @@ const StyledProyectosPicture = styled.div`
     right: 4%;
     width: 20%;
     height: auto;
+  }
+  .hanged-mini {
+    display: none;
   }
   .cuentanos {
     position: absolute;
@@ -135,8 +167,8 @@ const StyledProyectosPicture = styled.div`
   .datos-contacto {
     position: absolute;
     top: 92%;
-    left: 22%;
-    width: 36%;
+    left: 18%;
+    width: 46%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -146,6 +178,68 @@ const StyledProyectosPicture = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    @media (max-width: 1400px) {
+      font-size: 26px;
+    }
+    @media (max-width: 1080px) {
+      font-size: 22px;
+    }
+    @media (max-width: 880px) {
+      font-size: 17px;
+    }
+    @media (max-width: 490px) {
+      font-size: 14px;
+    }
+    @media (max-width: 370px) {
+      font-size: 12px;
+    }
+  }
+  .whiteArrowLeft {
+    position: absolute;
+    top: -12%;
+    left: 10%;
+    width: 34%;
+    height: auto;
+  }
+  @media (max-width: 660px) {
+    .hanged {
+      display: none;
+    }
+    .cuentanos {
+      top: 26%;
+      left: 16%;
+      width: 70%;
+    }
+    .dondeUbicamos {
+      position: absolute;
+      top: 42%;
+      left: 22%;
+      width: 58%;
+    }
+    .datos-contacto {
+      flex-direction: column;
+      top: 70%;
+      span {
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      @media (max-width: 490px) {
+        top: 65%;
+      }
+    }
+    .separador {
+      top: 60%;
+      width: 10%;
+      left: 36%;
+    }
+    .hanged-mini {
+      display: flex;
+      position: absolute;
+      top: 54%;
+      right: 20%;
+      width: 20%;
+      height: auto;
+    }
   }
 `;
 
@@ -156,6 +250,7 @@ const imageMapper = {
 };
 
 const Proyectos = () => {
+  const { width } = getWindowDimension();
   return (
     <StyledProyectos>
       <div className="overframe">
@@ -176,13 +271,29 @@ const Proyectos = () => {
           })}
         </div>
         <StyledProyectosPicture id="contacto">
+          {width > 660 ? (
+            <img
+              src={whiteArrowRight}
+              className="whiteArrowRight"
+              alt="whiteArrowRight"
+              draggable="false"
+            />
+          ) : (
+            <img
+              src={whiteArrowLeft}
+              className="whiteArrowLeft"
+              alt="whiteArrowLeft"
+              draggable="false"
+            />
+          )}
+          <img src={hanged} className="hanged" alt="hanged" draggable="false" />
           <img
-            src={whiteArrow}
-            className="whiteArrow"
-            alt="whiteArrow"
+            src={miniHanged}
+            className="hanged-mini"
+            alt="hanged-mini"
             draggable="false"
           />
-          <img src={hanged} className="hanged" alt="hanged" draggable="false" />
+
           <img
             src={cuentanos}
             className="cuentanos"
