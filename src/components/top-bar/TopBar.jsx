@@ -18,10 +18,10 @@ const StyledTopBar = styled.nav`
       margin: 30px 0;
     }
     .ubiqLogo {
-      height: 83px;
+      height: 40px;
     }
     .menuIcon {
-      height: 45px;
+      height: 26px;
       padding: 0 12px;
       cursor: pointer;
     }

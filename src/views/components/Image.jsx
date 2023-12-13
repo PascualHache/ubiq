@@ -44,6 +44,7 @@ const ImageBox = styled.div`
     width: 100%;
     height: 100%;
     object-fit: contain;
+    /* transition: all 1s ease-in-out; */
   }
 `;
 

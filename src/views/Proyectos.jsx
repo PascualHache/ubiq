@@ -21,6 +21,11 @@ const StyledProyectos = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(${greenBg});
+  .over-proyectos {
+    @media (max-width: 660px) {
+      /* height: 100vw; */
+    }
+  }
   .proyectos {
     display: flex;
     flex-direction: row;
@@ -59,7 +64,7 @@ const StyledProyectos = styled.div`
   }
   .separador {
     position: absolute;
-    top: 85%;
+    top: 74%;
     left: 32%;
     width: 16%;
     height: auto;
@@ -154,9 +159,9 @@ const StyledProyectosPicture = styled.div`
   }
   .dondeUbicamos {
     position: absolute;
-    top: 67%;
-    left: 15%;
-    width: 52%;
+    top: 82%;
+    left: 14%;
+    width: 30%;
     height: auto;
   }
   .datos-contacto {
@@ -164,16 +169,30 @@ const StyledProyectosPicture = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 92%;
-    left: 18%;
+    top: 83%;
+    left: 32%;
     width: 46%;
     height: auto;
     flex-direction: row;
-    font-family: RobotoCondensedBold;
+    font-family: RobotoCondensed;
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    span {
+      border-radius: 80px;
+      border: 2px solid #fff;
+      padding: 12px 40px;
+      @media (max-width: 1110px) {
+        padding: 12px 30px;
+      }
+      @media (max-width: 860px) {
+        padding: 12px 20px;
+      }
+      @media (max-width: 740px) {
+        padding: 12px 12px;
+      }
+    }
     a {
       text-decoration: none !important;
       text-decoration: none;
@@ -255,7 +274,7 @@ const Proyectos = () => {
   const { width } = getWindowDimension();
   return (
     <StyledProyectos>
-      <div>
+      <div className="over-proyectos">
         <div className="proyectos">
           {Object.keys(proyectos).map((talent, index) => {
             return (
@@ -324,9 +343,9 @@ const Proyectos = () => {
           />
           <div className="datos-contacto">
             {/* <span>923 644 644</span> */}
-            <span>
-              <a href="mailto:info@ubiq.ad">info@ubiq.ad</a>
-            </span>
+            <a href="mailto:info@ubiq.ad">
+              <span>info@ubiq.ad</span>
+            </a>
             {/* <span>@ubiqagencia</span> */}
           </div>
         </StyledProyectosPicture>

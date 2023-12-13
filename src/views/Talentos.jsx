@@ -29,24 +29,6 @@ const StyledTalentos = styled.div`
     z-index: 10;
   }
 
-  .sub-talento {
-    color: #219c90;
-    font-family: RobotoCondensed;
-    font-size: 46px;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: -2.28px;
-    text-transform: uppercase;
-    @media (max-width: 1570px) {
-      font-size: 40px;
-    }
-    @media (max-width: 1280px) {
-      font-size: 30px;
-    }
-    @media (max-width: 960px) {
-      font-size: 20px;
-    }
-  }
   .mini-talentos {
     display: flex;
     flex-direction: row;
@@ -79,19 +61,28 @@ const StyledProjectPicture = styled.div`
     left: 12%;
     width: 20%;
     height: auto;
+    @media (max-width: 660px) {
+      width: 40%;
+      top: -30%;
+      left: 1%;
+      width: 32%;
+    }
   }
   .proyectos {
     position: absolute;
     top: 50%;
     width: 38%;
+    @media (max-width: 660px) {
+      width: 40%;
+    }
   }
   .discontinous-box {
     width: 94%;
-    height: 105%;
+    height: 94%;
     border-radius: 34px;
     border: 1px dashed #219c90;
     position: absolute;
-    top: -103%;
+    top: -86%;
     z-index: 1;
     @media (max-width: 660px) {
       display: none;
@@ -119,9 +110,6 @@ const Talentos = () => {
             {Object.keys(talents).map((talent, index) => {
               return <Image key={index} talent={talents[talent]} />;
             })}
-          </div>
-          <div className="sub-talento">
-            especializados en ubicarte donde quieras estar
           </div>
         </>
       ) : (

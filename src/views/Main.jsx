@@ -16,19 +16,19 @@ const StyledMain = styled.div`
   position: relative;
   z-index: 10;
   .title-big {
-    padding: 40px 42px 0px 42px;
+    padding: 40px 42px 0px 30px;
     z-index: 10;
     img {
-      width: 100%;
+      width: 104%;
     }
   }
   .discontinous-box {
     width: 90%;
-    height: 32%;
+    height: 27%;
     border-radius: 34px;
     border: 1px dashed #219c90;
     position: absolute;
-    top: 2%;
+    top: 1%;
     z-index: 1;
     transform: rotate(2deg);
     @media (max-width: 660px) {
@@ -38,15 +38,17 @@ const StyledMain = styled.div`
 
   .discontinous-box2 {
     width: 60%;
-    height: 65%;
+    height: 57%;
     border-radius: 34px;
     border: 1px dashed #219c90;
     position: absolute;
-    top: 10%;
+    top: 14%;
     z-index: 1;
     display: flex;
     @media (max-width: 660px) {
-      display: none;
+      width: 86%;
+      top: 17.5%;
+      height: 56%;
     }
   }
   .sub-title {
@@ -55,26 +57,28 @@ const StyledMain = styled.div`
     justify-content: start;
     .width-screen-sub-title {
       color: #000;
-      font-family: RobotoCondensedBold;
+      font-family: RobotoCondensed;
       font-size: 37px;
       font-style: normal;
-      font-weight: 800;
+      font-weight: 400;
       line-height: normal;
       text-transform: uppercase;
       max-width: 600px;
       text-align: left;
+      span {
+        color: #219c90;
+      }
     }
 
     .mobile-sub-title {
       color: #000;
-      font-family: RobotoLightItalic;
+      font-family: RobotoCondensed;
       font-size: 37px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
       text-transform: uppercase;
-      text-align: center;
-      margin: 0 auto;
+      text-align: left;
       @media (max-width: 920px) {
         font-size: 28px;
       }
@@ -87,18 +91,18 @@ const StyledMain = styled.div`
       @media (max-width: 456px) {
         font-size: 14px;
       }
-      @media (max-width: 360px) {
+      @media (max-width: 390px) {
         font-size: 10px;
       }
       span {
-        font-family: RobotoCondensedBlackItalic;
+        color: #219c90;
       }
     }
   }
   .picture-frame {
     position: relative;
     width: 100vw;
-    height: 100vw;
+    height: 114vw;
     max-width: 100%;
     margin-bottom: -5%;
     display: flex;
@@ -106,37 +110,69 @@ const StyledMain = styled.div`
     align-items: center;
     flex-direction: column;
     @media (max-width: 660px) {
-      height: 130vw;
+      height: 152vw;
+    }
+    .sub-talento {
+      position: absolute;
+      top: 11%;
+      color: #219c90;
+      font-family: RobotoCondensedBlackItalic;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      @media (max-width: 1570px) {
+        font-size: 36px;
+      }
+      @media (max-width: 1280px) {
+        font-size: 28px;
+      }
+      @media (max-width: 960px) {
+        font-size: 18px;
+      }
+      @media (max-width: 660px) {
+        font-size: 16px;
+        letter-spacing: 0px;
+        top: 15%;
+      }
     }
     .leftArrow {
       position: absolute;
-      top: 0%;
-      left: 12%;
-      width: 20%;
+      top: 2%;
+      left: 6%;
+      width: 28%;
       height: auto;
     }
     .esquema1 {
       position: absolute;
       height: auto;
-      top: 12%;
+      top: 18%;
       width: 46%;
       @media (max-width: 660px) {
-        top: 34%;
+        top: 42%;
       }
     }
     .rightArrow {
       position: absolute;
       width: 24%;
-      top: 57%;
+      top: 63%;
       right: 18%;
       @media (max-width: 660px) {
         top: 65%;
+        width: 36%;
+        right: 2%;
       }
     }
     .talentos {
       position: absolute;
       top: 82%;
       width: 28%;
+      @media (max-width: 660px) {
+        top: 86%;
+        width: 40%;
+      }
     }
   }
   .aim-box {
@@ -148,7 +184,7 @@ const StyledMain = styled.div`
     text-transform: uppercase;
     font-weight: 300;
     position: absolute;
-    top: 60%;
+    top: 58%;
     @media (max-width: 1570px) {
       font-size: 40px;
     }
@@ -159,8 +195,8 @@ const StyledMain = styled.div`
       font-size: 20px;
     }
     @media (max-width: 660px) {
-      top: 15%;
-      font-size: 30px;
+      top: 20%;
+      font-size: 36px;
     }
     @media (max-width: 580px) {
       font-size: 26px;
@@ -197,13 +233,13 @@ const Main = () => {
       <div className="sub-title">
         {width > 1100 ? (
           <div className="width-screen-sub-title">
-            Somos una agencia de publicidad, creación de contenido y
-            representación de talento.
+            Somos una agencia de <span>publicidad</span>, creación de{" "}
+            <span>contenido</span> y representación de <span>talento</span>.
           </div>
         ) : (
           <div className="mobile-sub-title">
-            Somos una <span>agencia de publicidad</span>, creación
-            <br /> de contenido y representación de talento.
+            Somos una agencia de <span>publicidad</span>, creación de{" "}
+            <span>contenido</span> y representación de <span>talento</span>.
           </div>
         )}
       </div>
@@ -215,6 +251,9 @@ const Main = () => {
           alt="leftArrow"
           draggable="false"
         />
+        <div className="sub-talento">
+          especializados en ubicarte donde quieras estar
+        </div>
         <img
           src={esquema1}
           className="esquema1"
@@ -230,11 +269,11 @@ const Main = () => {
         <div className="aim-box">
           ACERCAMOS
           <br />
-          <span className="bold underline">MARCAS</span> A <span>TALENTOS</span>
+          <span className="bold">MARCAS</span> A <span>TALENTOS</span>
           ,<br />
           <span>TALENTOS</span> A <span className="bold">AUDIENCIAS</span>
           <br />Y <span className="bold">AUDIENCIAS</span> A{" "}
-          <span className="bold underline">MARCAS.</span>
+          <span className="bold">MARCAS.</span>
         </div>
         {width > 660 ? (
           <img
