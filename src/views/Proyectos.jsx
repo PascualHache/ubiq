@@ -23,7 +23,7 @@ const StyledProyectos = styled.div`
   background-image: url(${greenBg});
   .over-proyectos {
     @media (max-width: 660px) {
-      /* height: 100vw; */
+      width 100%;
     }
   }
   .proyectos {
