@@ -16,10 +16,16 @@ const StyledMain = styled.div`
   position: relative;
   z-index: 10;
   .title-big {
-    padding: 40px 42px 0px 30px;
+    padding: 40px 42px 0px 40px;
     z-index: 10;
     img {
-      width: 104%;
+      width: 100%;
+    }
+    @media (max-width: 660px) {
+      padding: 40px 42px 0px 30px;
+      img {
+        width: 104%;
+      }
     }
   }
   .discontinous-box {
