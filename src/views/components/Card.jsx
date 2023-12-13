@@ -12,7 +12,7 @@ const StyledCard = styled.div`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-
+  z-index: 100;
   img {
     width: 100%;
   }

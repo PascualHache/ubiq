@@ -3,7 +3,6 @@ import greenBg from "./../assets/graphics/green-bg.png";
 import proyectos from "../statics/proyectos.json";
 import Card from "./components/Card";
 import whiteArrowRight from "./../assets/graphics/white-arrow-right.svg";
-import whiteArrowLeft from "./../assets/graphics/white-arrow-left.svg";
 import hanged from "./../assets/graphics/hanged.svg";
 import miniHanged from "./../assets/graphics/mini-hanged.svg";
 import cuentanos from "./../assets/graphics/cuentanos.svg";
@@ -13,7 +12,6 @@ import miniLogo from "./../assets/graphics/mini-logo.svg";
 import esland from "../../public/projects/esland.png";
 import minititans from "../../public/projects/minititans.png";
 import pingpong from "../../public/projects/pingpong.png";
-import { getWindowDimension } from "../utils/utils";
 
 const StyledProyectos = styled.div`
   display: flex;
@@ -32,16 +30,6 @@ const StyledProyectos = styled.div`
     flex-direction: row;
     gap: 5%;
     padding: 5%;
-    @media (max-width: 660px) {
-      flex-direction: column;
-      gap: 7%;
-      padding: 10%;
-      #card-project-0,
-      #card-project-1,
-      #card-project-3 {
-        margin-bottom: 44px;
-      }
-    }
     .card-project {
       width: 33%;
     }
@@ -61,6 +49,18 @@ const StyledProyectos = styled.div`
     #card-project-1:hover,
     #card-project-2:hover {
       transform: rotate(0deg);
+    }
+    @media (max-width: 660px) {
+      flex-direction: column;
+      gap: 7%;
+      padding: 10%;
+      #card-project-0,
+      #card-project-1,
+      #card-project-2 {
+        margin-bottom: 44px;
+        transform: rotate(0deg);
+        padding: 0%;
+      }
     }
   }
   .separador {
@@ -134,12 +134,20 @@ const StyledProyectosPicture = styled.div`
   width: 100vw;
   max-width: 100%;
   height: 58vw;
+  @media (max-width: 660px) {
+    height: 120vw;
+  }
   .whiteArrowRight {
     position: absolute;
     top: -6%;
     right: 32%;
     width: 30%;
     height: auto;
+    @media (max-width: 660px) {
+      width: 55%;
+      top: -26%;
+      right: 0%;
+    }
   }
   .hanged {
     position: absolute;
@@ -216,50 +224,51 @@ const StyledProyectosPicture = styled.div`
       font-size: 12px;
     }
   }
-  .whiteArrowLeft {
-    position: absolute;
-    top: -12%;
-    left: 10%;
-    width: 34%;
-    height: auto;
-  }
   @media (max-width: 660px) {
     .hanged {
       display: none;
     }
     .cuentanos {
       top: 26%;
-      left: 16%;
-      width: 70%;
+      left: 10%;
+      width: 80%;
     }
     .dondeUbicamos {
       position: absolute;
-      top: 42%;
-      left: 22%;
-      width: 58%;
+      top: 40%;
+      left: 14%;
+      width: 76%;
     }
     .datos-contacto {
       flex-direction: column;
       top: 70%;
+      left: 17.5%;
       span {
         margin-bottom: 24px;
         text-align: center;
+        padding: 12px 30px;
+        @media (max-width: 400px) {
+          padding: 12px 20px;
+        }
       }
       @media (max-width: 490px) {
         top: 65%;
       }
+      @media (max-width: 400px) {
+        top: 70%;
+      }
     }
     .separador {
       top: 60%;
-      width: 10%;
-      left: 36%;
+      width: 20%;
+      left: 30%;
     }
     .hanged-mini {
       display: flex;
       position: absolute;
-      top: 54%;
-      right: 20%;
-      width: 20%;
+      top: 40%;
+      right: 10%;
+      width: 25%;
       height: auto;
     }
   }
@@ -272,7 +281,6 @@ const imageMapper = {
 };
 
 const Proyectos = () => {
-  const { width } = getWindowDimension();
   return (
     <StyledProyectos>
       <div className="over-proyectos">
@@ -294,21 +302,12 @@ const Proyectos = () => {
           })}
         </div>
         <StyledProyectosPicture>
-          {width > 660 ? (
-            <img
-              src={whiteArrowRight}
-              className="whiteArrowRight"
-              alt="whiteArrowRight"
-              draggable="false"
-            />
-          ) : (
-            <img
-              src={whiteArrowLeft}
-              className="whiteArrowLeft"
-              alt="whiteArrowLeft"
-              draggable="false"
-            />
-          )}
+          <img
+            src={whiteArrowRight}
+            className="whiteArrowRight"
+            alt="whiteArrowRight"
+            draggable="false"
+          />
           <img
             src={hanged}
             className="hanged"
@@ -323,7 +322,6 @@ const Proyectos = () => {
             draggable="false"
             id="contacto"
           />
-
           <img
             src={cuentanos}
             className="cuentanos"
@@ -343,11 +341,9 @@ const Proyectos = () => {
             draggable="false"
           />
           <div className="datos-contacto">
-            {/* <span>923 644 644</span> */}
             <a href="mailto:info@ubiq.ad">
               <span>info@ubiq.ad</span>
             </a>
-            {/* <span>@ubiqagencia</span> */}
           </div>
         </StyledProyectosPicture>
         <div className="footer">

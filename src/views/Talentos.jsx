@@ -37,10 +37,14 @@ const StyledTalentos = styled.div`
     flex-wrap: wrap;
     gap: 12px;
     z-index: 10;
+    flex-wrap: wrap;
+    .sub-mini-talentos {
+      flex-basis: 40%;
+    }
     img {
       width: 100%;
-      min-width: 170px;
-      /* box-shadow: 0px 0px 12.51px 0px #2c665f; */
+      min-width: 130px;
+      max-width: 240px;
     }
   }
 `;
@@ -118,7 +122,7 @@ const Talentos = () => {
             .sort((a, b) => a.miniIndex - b.miniIndex)
             .map((talent, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="sub-mini-talentos">
                   <a href={talent.url} target="_blank" rel="noreferrer">
                     <img
                       src={imageMiniMapper[talent.image]}

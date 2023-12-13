@@ -135,13 +135,16 @@ const StyledMain = styled.div`
       @media (max-width: 1280px) {
         font-size: 28px;
       }
-      @media (max-width: 960px) {
+      @media (max-width: 760px) {
         font-size: 18px;
       }
       @media (max-width: 660px) {
         font-size: 16px;
         letter-spacing: 0px;
         top: 15%;
+      }
+      @media (max-width: 415px) {
+        font-size: 10px;
       }
     }
     .leftArrow {

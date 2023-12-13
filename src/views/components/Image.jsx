@@ -44,7 +44,19 @@ const ImageBox = styled.div`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* transition: all 1s ease-in-out; */
+    @keyframes breath-animation {
+      0% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  img:hover {
+    animation-name: breath-animation;
+    animation-duration: 1s;
+    animation-iteration-count: linear;
   }
 `;
 
