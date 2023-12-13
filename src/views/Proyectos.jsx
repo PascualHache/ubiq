@@ -22,9 +22,9 @@ const StyledProyectos = styled.div`
   align-items: center;
   background-image: url(${greenBg});
   .over-proyectos {
-    width 100%;
+    width: 100%;
     @media (max-width: 660px) {
-      width 100%;
+      width: 100%;
     }
   }
   .proyectos {
