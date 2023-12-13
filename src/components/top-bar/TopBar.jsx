@@ -97,8 +97,8 @@ const TopBar = () => {
         </div>
         {width >= 1100 ? (
           <ul>
-            <a href="#proyectos">proyectos</a>
             <a href="#talento">talento</a>
+            <a href="#proyectos">proyectos</a>
             <a href="#contacto">contacto</a>
           </ul>
         ) : (
@@ -112,8 +112,8 @@ const TopBar = () => {
             />
             {open && (
               <StyledMenu open={open}>
-                <a href="#proyectos">proyectos</a>
                 <a href="#talento">talento</a>
+                <a href="#proyectos">proyectos</a>
                 <a href="#contacto">contacto</a>
               </StyledMenu>
             )}

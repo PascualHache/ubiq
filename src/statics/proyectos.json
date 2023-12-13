@@ -4,20 +4,23 @@
     "title": "ping pong fuera",
     "name": "gemita",
     "description": "Un torneo de ping pong entre varios creadores y creadoras de contenido top de la plataforma, patrocinado por Infojobs, Iberdrola y Butterfly. El primer evento presencial de nuestra talent Gemita, y también el primer evento presencial de Twitch creado por una mujer.",
-    "date": "5.FEB 2022"
+    "date": "15.SEP 2022",
+    "logo": "pingpong"
   },
   "2": {
     "image": "esland",
     "title": "premios esland",
     "name": "thegrefg",
     "description": "Uno de los hitos más esperados del mundo de la creación de contenido hispanohablante, marcado en el calendario de toda la comunidad. En su tercera edición y la más ambiciosa de todas, que tendrá lugar en Andorra.",
-    "date": "5.FEB 2022"
+    "date": "16-17.FEB 2023",
+    "logo": "esland"
   },
   "3": {
     "image": "minititans",
     "title": "minititans x milanuncios",
     "name": "thegrefg",
     "description": "Un contenido propio en el que los streamers pueden conducir coches radiocontrol, desde sus setups y sin importar la distancia. La primera carrera de este contenido consistió en varias pruebas, con el escuadrón salchichón y patrocinada por Milanuncios.",
-    "date": "5.FEB 2022"
+    "date": "6.SEP 2022",
+    "logo": "minititans"
   }
 }

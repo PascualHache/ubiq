@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import logoEsland from "../../../public/projects/logo-esland.svg";
+import logoMinititans from "../../../public/projects/logo-minititans.svg";
+import logoPingpong from "../../../public/projects/logo-pinpong.svg";
 
 const StyledCard = styled.div`
   background-color: #ffffff;
@@ -67,6 +69,14 @@ const StyledCard = styled.div`
       width: 14%;
       height: auto;
     }
+    .pingpong {
+      width: 22%;
+      height: auto;
+    }
+    .minititans {
+      width: 26%;
+      height: auto;
+    }
   }
   .card-row2 {
     display: flex;
@@ -105,8 +115,14 @@ const StyledCard = styled.div`
   }
 `;
 
+const imageMapper = {
+  esland: logoEsland,
+  minititans: logoMinititans,
+  pingpong: logoPingpong,
+};
+
 // eslint-disable-next-line react/prop-types
-const Card = ({ image, title, name, description, date, id = "" }) => {
+const Card = ({ image, title, name, logo, description, date, id = "" }) => {
   // eslint-disable-next-line react/prop-types
   const arrDate = date.split(" ");
   return (
@@ -119,11 +135,12 @@ const Card = ({ image, title, name, description, date, id = "" }) => {
               <div className="title">{title}</div>
               <div className="card-subtitle">{`by ${name}`}</div>
             </div>
-            <img src={logoEsland} alt="Logo" className="card-logo" />
+            <img
+              src={imageMapper[logo]}
+              alt="Logo"
+              className={`card-logo ${logo}`}
+            />
           </div>
-          {/* <div className="card-subtitle">
-            <div className="subtitle">{`by ${name}`}</div>
-          </div> */}
         </div>
         <div className="card-row2">
           <p className="card-description">{description}</p>

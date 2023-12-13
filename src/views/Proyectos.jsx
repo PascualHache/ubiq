@@ -21,11 +21,6 @@ const StyledProyectos = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url(${greenBg});
-  .overframe {
-    background-color: #219c90;
-    width: 100%;
-    opacity: 0.7;
-  }
   .proyectos {
     display: flex;
     flex-direction: row;
@@ -166,18 +161,25 @@ const StyledProyectosPicture = styled.div`
   }
   .datos-contacto {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 92%;
     left: 18%;
     width: 46%;
     height: auto;
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
     font-family: RobotoCondensedBold;
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    a {
+      text-decoration: none !important;
+      text-decoration: none;
+      color: #fff;
+      margin-right: 6px;
+    }
     @media (max-width: 1400px) {
       font-size: 26px;
     }
@@ -253,7 +255,7 @@ const Proyectos = () => {
   const { width } = getWindowDimension();
   return (
     <StyledProyectos>
-      <div className="overframe">
+      <div>
         <div className="proyectos">
           {Object.keys(proyectos).map((talent, index) => {
             return (
@@ -263,6 +265,7 @@ const Proyectos = () => {
                 description={proyectos[talent].description}
                 date={proyectos[talent].date}
                 name={proyectos[talent].name}
+                logo={proyectos[talent].logo}
                 key={index}
                 className="card-project"
                 id={"card-project-" + index}
@@ -270,7 +273,7 @@ const Proyectos = () => {
             );
           })}
         </div>
-        <StyledProyectosPicture id="contacto">
+        <StyledProyectosPicture>
           {width > 660 ? (
             <img
               src={whiteArrowRight}
@@ -286,12 +289,19 @@ const Proyectos = () => {
               draggable="false"
             />
           )}
-          <img src={hanged} className="hanged" alt="hanged" draggable="false" />
+          <img
+            src={hanged}
+            className="hanged"
+            alt="hanged"
+            draggable="false"
+            id="contacto"
+          />
           <img
             src={miniHanged}
             className="hanged-mini"
             alt="hanged-mini"
             draggable="false"
+            id="contacto"
           />
 
           <img
@@ -313,9 +323,11 @@ const Proyectos = () => {
             draggable="false"
           />
           <div className="datos-contacto">
-            <span>923 644 644</span>
-            <span>info@ubiq.com</span>
-            <span>@ubiqagencia</span>
+            {/* <span>923 644 644</span> */}
+            <span>
+              <a href="mailto:info@ubiq.ad">info@ubiq.ad</a>
+            </span>
+            {/* <span>@ubiqagencia</span> */}
           </div>
         </StyledProyectosPicture>
         <div className="footer">
@@ -323,7 +335,6 @@ const Proyectos = () => {
           <div className="footer-text">
             <span>Andorra LA VELLA</span>
             <span className="footer-text-rights">
-              {" "}
               <img
                 src={miniLogo}
                 className="miniLogo"
@@ -333,7 +344,7 @@ const Proyectos = () => {
               UBIQ S.L. todos los derechos reservados
             </span>
             <span>
-              <a href="mailto: abc@example.com">CONTACTO</a>
+              <a href="mailto:info@ubiq.ad">CONTACTO</a>
             </span>
             <span>COOKIES</span>
           </div>

@@ -4,18 +4,14 @@ import proyectos from "./../assets/graphics/proyectos.svg";
 import MiniProyectos from "./../assets/graphics/mini-proyectos.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import { getWindowDimension } from "../utils/utils";
-import gemita from "../../public/talents/gemita.png";
-import thegrefg from "../../public/talents/thegrefg.png";
-import gonsabella from "../../public/talents/gonsabella.png";
-import llunaclark from "../../public/talents/llunaclark.png";
-import mixwell from "../../public/talents/mixwell.png";
-import rogercarbo from "../../public/talents/rogercarbo.png";
 import Minigemita from "../../public/mini-talents/mini-gemita.png";
 import Minithegrefg from "../../public/mini-talents/mini-thegrefg.png";
-import Minigonsabella from "../../public/mini-talents/mini-rogercarbo.png";
+import Minigonsabella from "../../public/mini-talents/mini-gonsabella.png";
 import Minillunaclark from "../../public/mini-talents/mini-llunaclark.png";
 import Minimixwell from "../../public/mini-talents/mini-mixwell.png";
 import Minirogercarbo from "../../public/mini-talents/mini-rogercarbo.png";
+import Minipaaulacg from "../../public/mini-talents/mini-paaulacg.png";
+import Image from "./components/Image";
 
 const StyledTalentos = styled.div`
   display: flex;
@@ -25,13 +21,12 @@ const StyledTalentos = styled.div`
   height: 100%;
   margin: 0px 2%;
   .talentos {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     gap: 16px;
     z-index: 10;
-  }
-  img {
-    width: 100%;
   }
 
   .sub-talento {
@@ -63,7 +58,7 @@ const StyledTalentos = styled.div`
     img {
       width: 100%;
       min-width: 170px;
-      box-shadow: 0px 0px 12.51px 0px #2c665f;
+      /* box-shadow: 0px 0px 12.51px 0px #2c665f; */
     }
   }
 `;
@@ -104,15 +99,6 @@ const StyledProjectPicture = styled.div`
   }
 `;
 
-const imageMapper = {
-  gemita: gemita,
-  gonsabella: gonsabella,
-  llunaclark: llunaclark,
-  mixwell: mixwell,
-  rogercarbo: rogercarbo,
-  thegrefg: thegrefg,
-};
-
 const imageMiniMapper = {
   gemita: Minigemita,
   gonsabella: Minigonsabella,
@@ -120,6 +106,7 @@ const imageMiniMapper = {
   mixwell: Minimixwell,
   rogercarbo: Minirogercarbo,
   thegrefg: Minithegrefg,
+  paaulacg: Minipaaulacg,
 };
 
 const Talentos = () => {
@@ -130,14 +117,7 @@ const Talentos = () => {
         <>
           <div className="talentos">
             {Object.keys(talents).map((talent, index) => {
-              return (
-                <div key={index}>
-                  <img
-                    src={imageMapper[talents[talent].image]}
-                    alt={talents[talent].name}
-                  />
-                </div>
-              );
+              return <Image key={index} talent={talents[talent]} />;
             })}
           </div>
           <div className="sub-talento">
@@ -146,16 +126,20 @@ const Talentos = () => {
         </>
       ) : (
         <div className="mini-talentos">
-          {Object.keys(talents).map((talent, index) => {
-            return (
-              <div key={index}>
-                <img
-                  src={imageMiniMapper[talents[talent].image]}
-                  alt={talents[talent].name}
-                />
-              </div>
-            );
-          })}
+          {Object.values(talents)
+            .sort((a, b) => a.miniIndex - b.miniIndex)
+            .map((talent, index) => {
+              return (
+                <div key={index}>
+                  <a href={talent.url} target="_blank" rel="noreferrer">
+                    <img
+                      src={imageMiniMapper[talent.image]}
+                      alt={talent.name}
+                    />
+                  </a>
+                </div>
+              );
+            })}
         </div>
       )}
       <StyledProjectPicture>

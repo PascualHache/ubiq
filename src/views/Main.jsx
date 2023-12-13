@@ -32,7 +32,7 @@ const StyledMain = styled.div`
     z-index: 1;
     transform: rotate(2deg);
     @media (max-width: 660px) {
-      height: 24%;
+      height: 26%;
     }
   }
 

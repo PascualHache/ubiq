@@ -3,36 +3,49 @@
     "name": "mixwell",
     "image": "mixwell",
     "miniIndex": 3,
-    "index": 0
+    "index": 1,
+    "url": "https://www.twitch.tv/mixwell"
   },
   "2": {
     "name": "thegrefg",
     "image": "thegrefg",
     "miniIndex": 0,
-    "index": 1
+    "index": 2,
+    "url": "https://www.twitch.tv/thegrefg"
   },
   "3": {
     "name": "gemita",
     "image": "gemita",
     "miniIndex": 1,
-    "index": 2
+    "index": 3,
+    "url": "https://www.twitch.tv/gemita"
   },
   "4": {
     "name": "llunaclark",
     "image": "llunaclark",
     "miniIndex": 2,
-    "index": 3
+    "index": 4,
+    "url": "https://www.twitch.tv/llunaclark"
   },
   "5": {
     "name": "rogercarbo",
     "image": "rogercarbo",
     "miniIndex": 4,
-    "index": 4
+    "index": 4,
+    "url": "https://www.twitch.tv/rogercarbo11"
   },
   "6": {
     "name": "gonsabella",
     "image": "gonsabella",
     "miniIndex": 5,
-    "index": 5
+    "index": 5,
+    "url": "https://www.twitch.tv/gonsabellla"
+  },
+  "7": {
+    "name": "paaulacg",
+    "image": "paaulacg",
+    "miniIndex": 6,
+    "index": 6,
+    "url": "https://www.twitch.tv/paaulacg_"
   }
 }
