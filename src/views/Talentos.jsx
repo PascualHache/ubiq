@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import talents from "../statics/talentos.json";
-import proyectos from "./../assets/graphics/proyectos.svg";
-import MiniProyectos from "./../assets/graphics/mini-proyectos.svg";
+import proyectos from "./../assets/graphics/proyectos.png";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import { getWindowDimension } from "../utils/utils";
 import Minigemita from "../../public/mini-talents/mini-gemita.png";
@@ -83,8 +82,8 @@ const StyledProjectPicture = styled.div`
   .discontinous-box {
     width: 94%;
     height: 94%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23219c90' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 34px;
-    border: 1px dashed #219c90;
     position: absolute;
     top: -86%;
     z-index: 1;
@@ -142,23 +141,13 @@ const Talentos = () => {
           alt="leftArrow"
           draggable="false"
         />
-        {width > 660 ? (
-          <img
-            src={proyectos}
-            className="proyectos"
-            alt="proyectos"
-            draggable="false"
-            id="proyectos"
-          />
-        ) : (
-          <img
-            src={MiniProyectos}
-            className="proyectos"
-            alt="proyectos"
-            draggable="false"
-            id="proyectos"
-          />
-        )}
+        <img
+          src={proyectos}
+          className="proyectos"
+          alt="proyectos"
+          draggable="false"
+          id="proyectos"
+        />
       </StyledProjectPicture>
     </StyledTalentos>
   );

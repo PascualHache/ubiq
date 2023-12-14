@@ -3,8 +3,7 @@ import esquema1 from "./../assets/graphics/esquema1.svg";
 import ubicateHeavy from "./../assets/graphics/ubicate-heavy.svg";
 import leftArrow from "./../assets/graphics/left-arrow.svg";
 import rightArrow from "./../assets/graphics/right-arrow.svg";
-import talentos from "./../assets/graphics/talentos.svg";
-import miniTalentos from "./../assets/graphics/mini-talentos.svg";
+import talentos from "./../assets/graphics/talentos.png";
 import { getWindowDimension } from "../utils/utils";
 
 const StyledMain = styled.div`
@@ -31,22 +30,23 @@ const StyledMain = styled.div`
   .discontinous-box {
     width: 90%;
     height: 27%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23219c90' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 34px;
-    border: 1px dashed #219c90;
     position: absolute;
     top: 1%;
     z-index: 1;
     transform: rotate(2deg);
     @media (max-width: 660px) {
       height: 26%;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23219c90' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     }
   }
 
   .discontinous-box2 {
     width: 60%;
     height: 57%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23219c90' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 34px;
-    border: 1px dashed #219c90;
     position: absolute;
     top: 14%;
     z-index: 1;
@@ -55,6 +55,7 @@ const StyledMain = styled.div`
       width: 86%;
       top: 17.5%;
       height: 56%;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='34' ry='34' stroke='%23219c90' stroke-width='1' stroke-dasharray='6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     }
   }
   .sub-title {
@@ -284,23 +285,13 @@ const Main = () => {
           <br />Y <span className="bold">AUDIENCIAS</span> A{" "}
           <span className="bold">MARCAS.</span>
         </div>
-        {width > 660 ? (
-          <img
-            src={talentos}
-            className="talentos"
-            alt="talentos"
-            draggable="false"
-            id="talentos"
-          />
-        ) : (
-          <img
-            src={miniTalentos}
-            className="talentos"
-            alt="talentos"
-            draggable="false"
-            id="talentos"
-          />
-        )}
+        <img
+          src={talentos}
+          className="talentos"
+          alt="talentos"
+          draggable="false"
+          id="talentos"
+        />
       </div>
     </StyledMain>
   );
