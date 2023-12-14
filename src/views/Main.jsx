@@ -290,7 +290,7 @@ const Main = () => {
             className="talentos"
             alt="talentos"
             draggable="false"
-            id="talento"
+            id="talentos"
           />
         ) : (
           <img
@@ -298,7 +298,7 @@ const Main = () => {
             className="talentos"
             alt="talentos"
             draggable="false"
-            id="talento"
+            id="talentos"
           />
         )}
       </div>

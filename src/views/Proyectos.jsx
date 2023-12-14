@@ -90,6 +90,7 @@ const StyledProyectos = styled.div`
       margin-top: 20px;
       text-transform: uppercase;
       font-size: 20px;
+      color: #fff;
       @media (max-width: 1005px) {
         font-size: 16px;
       }

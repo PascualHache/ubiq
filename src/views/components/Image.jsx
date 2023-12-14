@@ -55,7 +55,7 @@ const ImageBox = styled.div`
   }
   img:hover {
     animation-name: breath-animation;
-    animation-duration: 1s;
+    animation-duration: 300ms;
     animation-iteration-count: linear;
   }
 `;
