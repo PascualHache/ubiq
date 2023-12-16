@@ -145,7 +145,7 @@ const StyledProyectosPicture = styled.div`
     width: 30%;
     height: auto;
     @media (max-width: 660px) {
-      width: 55%;
+      width: 40%;
       top: -26%;
       right: 0%;
     }
@@ -236,7 +236,7 @@ const StyledProyectosPicture = styled.div`
     }
     .dondeUbicamos {
       position: absolute;
-      top: 40%;
+      top: 43%;
       left: 14%;
       width: 76%;
     }
@@ -253,9 +253,6 @@ const StyledProyectosPicture = styled.div`
         }
       }
       @media (max-width: 490px) {
-        top: 65%;
-      }
-      @media (max-width: 400px) {
         top: 70%;
       }
     }
@@ -267,9 +264,9 @@ const StyledProyectosPicture = styled.div`
     .hanged-mini {
       display: flex;
       position: absolute;
-      top: 40%;
-      right: 10%;
-      width: 25%;
+      top: 60%;
+      right: 16%;
+      width: 15%;
       height: auto;
     }
   }
@@ -302,26 +299,19 @@ const Proyectos = () => {
             );
           })}
         </div>
-        <StyledProyectosPicture>
+        <StyledProyectosPicture id="contacto">
           <img
             src={whiteArrowRight}
             className="whiteArrowRight"
             alt="whiteArrowRight"
             draggable="false"
           />
-          <img
-            src={hanged}
-            className="hanged"
-            alt="hanged"
-            draggable="false"
-            id="contacto"
-          />
+          <img src={hanged} className="hanged" alt="hanged" draggable="false" />
           <img
             src={miniHanged}
             className="hanged-mini"
             alt="hanged-mini"
             draggable="false"
-            id="contacto"
           />
           <img
             src={cuentanos}
