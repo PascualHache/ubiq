@@ -40,44 +40,45 @@ const ImageRow = styled.div`
 const ImageBox = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     @keyframes breath-animation {
       0% {
-        opacity: 0.7;
+        opacity: 0;
       }
       100% {
         opacity: 1;
       }
     }
   }
-  img:hover {
+  .coloredImage {
+    position: absolute;
+    left: 0px;
+    top: -3px;
+    opacity: 0;
+  }
+  .coloredImage:hover {
     animation-name: breath-animation;
-    animation-duration: 300ms;
-    animation-iteration-count: linear;
+    animation-duration: 500ms;
+    animation-iteration-count: ease-in-out;
+    opacity: 1;
   }
 `;
-
-const ImageComponent = ({ src, hoversrc }) => (
-  <ImageBox>
-    <img
-      src={src}
-      onMouseOver={(e) => (e.currentTarget.src = hoversrc)}
-      onMouseOut={(e) => (e.currentTarget.src = src)}
-      alt=""
-    />
-  </ImageBox>
-);
 
 const Image = ({ talent }) => (
   <ImageRow>
     <a href={talent.url} target="_blank" rel="noreferrer">
-      <ImageComponent
-        src={imageMapper[talent.image]}
-        hoversrc={imageMapper["color" + talent.image]}
-      />
+      <ImageBox>
+        <img src={imageMapper[talent.image]} alt="" />
+        <img
+          src={imageMapper["color" + talent.image]}
+          className="coloredImage"
+          alt=""
+        />
+      </ImageBox>
     </a>
   </ImageRow>
 );
